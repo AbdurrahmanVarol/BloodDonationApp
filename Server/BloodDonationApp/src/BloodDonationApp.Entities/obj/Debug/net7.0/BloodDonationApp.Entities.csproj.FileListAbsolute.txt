@@ -1,0 +1,24 @@
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\bin\Debug\net7.0\BloodDonationApp.Entities.deps.json
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\bin\Debug\net7.0\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\bin\Debug\net7.0\BloodDonationApp.Entities.pdb
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.AssemblyInfo.cs
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\refint\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.pdb
+C:\Users\User\source\repos\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\ref\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\bin\Debug\net7.0\BloodDonationApp.Entities.deps.json
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\bin\Debug\net7.0\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\bin\Debug\net7.0\BloodDonationApp.Entities.pdb
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.AssemblyInfo.cs
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\refint\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\BloodDonationApp.Entities.pdb
+C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Entities\obj\Debug\net7.0\ref\BloodDonationApp.Entities.dll

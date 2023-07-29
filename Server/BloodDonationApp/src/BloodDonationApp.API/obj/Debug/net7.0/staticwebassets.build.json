@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zwqWliT0YjEjplz0iV9qH3ReqorBMnVJ4hMyrNAe6DA=",
+  "Source": "BloodDonationApp.API",
+  "BasePath": "_content/BloodDonationApp.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

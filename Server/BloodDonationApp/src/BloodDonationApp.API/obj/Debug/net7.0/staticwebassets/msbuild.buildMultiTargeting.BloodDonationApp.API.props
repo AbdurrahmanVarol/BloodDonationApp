@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BloodDonationApp.API.props" />
+</Project>

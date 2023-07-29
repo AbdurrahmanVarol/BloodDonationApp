@@ -1,0 +1,13 @@
+﻿@model BloodGroupViewModel
+
+
+<div class="mb-3 form-floating">
+    <select class="form-select" id="BloodGroupId" name="BloodGroupId">
+        <option value="0" selected ="@(!Model.SelectedId.HasValue)" hidden>Seçiniz</option>
+        @foreach (var bloodGroup in Model.BloodGroups)
+        {
+            <option value="@bloodGroup.Id" selected="@(Model.SelectedId.HasValue && Model.SelectedId == bloodGroup.Id)">@($"{bloodGroup.Symbol}")</option>
+        }
+    </select>
+    <label for="BloodGroupId">Kan Grubu</label>
+</div>

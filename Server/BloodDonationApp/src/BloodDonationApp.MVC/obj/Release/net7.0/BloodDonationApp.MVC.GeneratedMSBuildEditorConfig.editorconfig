@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BloodDonationApp.MVC
+build_property.RootNamespace = BloodDonationApp.MVC
+build_property.ProjectDir = C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.MVC\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.MVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Auth/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Home/NotFoundPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3RGb3VuZFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Hospital/CreateHospital.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcQ3JlYXRlSG9zcGl0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Hospital/EmployeeManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcRW1wbG95ZWVNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Hospital/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Hospital/UpdateHospital.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcVXBkYXRlSG9zcGl0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Request/CreateRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxDcmVhdGVSZXF1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Request/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Request/UpdateRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxVcGRhdGVSZXF1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/Components/BloodGroup/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvb2RHcm91cFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/Components/Cities/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2l0aWVzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/Components/Genders/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2VuZGVyc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/Components/Hospitals/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSG9zcGl0YWxzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/Components/Navbar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2YmFyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/Yeni klasör/BloodDonationApp/Server/BloodDonationApp/src/BloodDonationApp.MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-3tr3slo0gf
