@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace BloodDonationApp.MVC.Caching;
+namespace BloodDonationApp.Business.Caching;
 
 public class InMemoryCache : ICache
 {

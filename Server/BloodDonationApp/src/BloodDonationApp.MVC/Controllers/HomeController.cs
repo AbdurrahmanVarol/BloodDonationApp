@@ -27,11 +27,11 @@ public class HomeController : Controller
             ViewBag.UserName = userName;
 
             var bloodGroupId = int.Parse(HttpContext.User.Claims.First(p => p.Type.Equals("BloodGroup")).Value);
-            var requestsByBloodGroup = await _requestService.GetRequestsByBloodGroupId(bloodGroupId);
+            var requestsByBloodGroup = await _requestService.GetRequestsByBloodGroupIdAsync(bloodGroupId);
             return View(requestsByBloodGroup);
 
         }
-        var requests = await _requestService.GetRequests();
+        var requests = await _requestService.GetRequestsAsync();
         return View(requests);
     }
 
@@ -45,6 +45,7 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
     [HttpGet]
     public IActionResult NotFoundPage()
     {

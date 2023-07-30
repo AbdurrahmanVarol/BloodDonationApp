@@ -1,4 +1,5 @@
-﻿using BloodDonationApp.Business.Services;
+﻿using BloodDonationApp.Business.Caching;
+using BloodDonationApp.Business.Services;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -22,6 +23,10 @@ namespace BloodDonationApp.Business
             services.AddScoped<IBloodGroupService, BloodGroupSerivce>();
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<IGenderService, GenderService>();
+            services.AddScoped<ICache, InMemoryCache>();
+
+            services.AddMemoryCache();
+
         }
     }
 }

@@ -23,11 +23,34 @@ public class HospitalsController : ControllerBase
         return Ok(hospitals);
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(Guid id)
+    {
+        var hospitals = await _hospitalService.GetByIdAsync(id);
+        return Ok(hospitals);
+    }
+
     [HttpPost]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Post(CreateHospitalRequest createHospitalRequest)
     {
         var id = await _hospitalService.AddAsync(createHospitalRequest);
-        return Ok(new { id });
+        return Created("", new { id });
+    }
+
+    [HttpPut]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Post(UpdateHospitalRequest updateHospitalRequest)
+    {
+        await _hospitalService.UpdateAsync(updateHospitalRequest);
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin,Staff")]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        await _hospitalService.DeleteAsync(id);
+        return NoContent();
     }
 }

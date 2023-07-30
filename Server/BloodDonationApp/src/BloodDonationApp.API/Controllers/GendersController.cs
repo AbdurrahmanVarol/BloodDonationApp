@@ -12,7 +12,7 @@ public class GendersController : ControllerBase
     {
         _genderService = genderService;
     }
-    //TODO: gerders serviste cache lensin
+
     [HttpGet]
     public async Task<IActionResult> Get()
     {

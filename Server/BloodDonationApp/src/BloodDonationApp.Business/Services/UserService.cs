@@ -46,7 +46,7 @@ public class UserService : IUserService
         return await _userRepository.GetAsync(p => p.UserName.Equals(username));
     }
 
-    public async Task<IEnumerable<EmployeeResponse>> GetUnEmployedUsers()
+    public async Task<IEnumerable<EmployeeResponse>> GetUnEmployedUsersAsync()
     {
         var users = await _userRepository.GetAllAsync(p => p.RoleId == (int)Roles.Donor);
 
@@ -54,10 +54,10 @@ public class UserService : IUserService
         return _mapper.Map<IEnumerable<EmployeeResponse>>(users);
     }
 
-    public async Task<EmployeeManagementResponse> GetUsersForEmployeeManagement(Guid hospitalId)
+    public async Task<EmployeeManagementResponse> GetUsersForEmployeeManagementAsync(Guid hospitalId)
     {
         var employees = await GetByHospitalIdAsync(hospitalId);
-        var unEmployees = await GetUnEmployedUsers();
+        var unEmployees = await GetUnEmployedUsersAsync();
         var result = new EmployeeManagementResponse
         {
             Employees = employees,

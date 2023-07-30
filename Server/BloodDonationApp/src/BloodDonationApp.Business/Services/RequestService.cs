@@ -64,17 +64,27 @@ public class RequestService : IRequestService
 
         return request.Id;
     }
+
+    public async Task<RequestDisplayResponse?> GetByIdAsync(Guid id)
+    {
+        var request = await _requestRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentException($"{id} Id'li talep bulunamadı");
+
+        return _mapper.Map<RequestDisplayResponse>(request);
+    }
+
     public async Task<RequestUpdateResponse> GetRequestForUpdateByIdAsync(Guid id)
     {
         var request = await _requestRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentException($"{id} Id'li talep bulunamadı");
 
         return _mapper.Map<RequestUpdateResponse>(request);
     }
+
     public async Task DeleteAsync(Guid id)
     {
         var request = await _requestRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentException($"{id} Id'li talep bulunamadı.");
         await _requestRepository.DeleteAsync(request);
     }
+
     public async Task UpdateAsync(UpdateRequestRequest updateRequestRequest)
     {
         var request = await _requestRepository.GetAsync(p => p.Id == updateRequestRequest.Id) ?? throw new ArgumentException($"{updateRequestRequest.Id} Id'li talep bulunamadı.");
@@ -94,7 +104,7 @@ public class RequestService : IRequestService
         await _requestRepository.UpdateAsync(request);
     }
 
-    public async Task<IEnumerable<RequestDisplayResponse>> GetRequestsByUserId(Guid userId)
+    public async Task<IEnumerable<RequestDisplayResponse>> GetRequestsByUserIdAsync(Guid userId)
     {
         //TODO: Talepler kangrubuna göre listelensin
         //TODO:Refactor
@@ -116,13 +126,15 @@ public class RequestService : IRequestService
             return _mapper.Map<IEnumerable<RequestDisplayResponse>>(requests);
         }
     }
-    public async Task<IEnumerable<RequestDisplayResponse>> GetRequestsByBloodGroupId(int bloodGroupId)
+
+    public async Task<IEnumerable<RequestDisplayResponse>> GetRequestsByBloodGroupIdAsync(int bloodGroupId)
     {
 
         var requests = await _requestRepository.GetRequestsWithIncludes(p => p.BloodGroupId == bloodGroupId);
         return _mapper.Map<IEnumerable<RequestDisplayResponse>>(requests);
     }
-    public async Task<IEnumerable<RequestDisplayResponse>> GetRequests()
+
+    public async Task<IEnumerable<RequestDisplayResponse>> GetRequestsAsync()
     {
 
         var requests = await _requestRepository.GetRequestsWithIncludes();

@@ -10,6 +10,6 @@ public interface IUserService
     Task AddAsync(User user);
     Task UpdateAsync(User employee);
     Task<IEnumerable<EmployeeResponse>> GetByHospitalIdAsync(Guid hospitalId);
-    Task<IEnumerable<EmployeeResponse>> GetUnEmployedUsers();
-    Task<EmployeeManagementResponse> GetUsersForEmployeeManagement(Guid hospitalId);
+    Task<IEnumerable<EmployeeResponse>> GetUnEmployedUsersAsync();
+    Task<EmployeeManagementResponse> GetUsersForEmployeeManagementAsync(Guid hospitalId);
 }

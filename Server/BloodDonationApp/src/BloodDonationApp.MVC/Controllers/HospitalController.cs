@@ -110,6 +110,7 @@ public class HospitalController : Controller
             return Json(new { IsSuccess = false });
         }
     }
+
     [Authorize(Roles = "Admin")]
     [HttpGet]
     public IActionResult EmployeeManagement(Guid hospitalId)

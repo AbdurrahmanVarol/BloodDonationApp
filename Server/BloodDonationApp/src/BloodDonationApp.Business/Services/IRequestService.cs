@@ -6,9 +6,10 @@ public interface IRequestService
 {
     Task<Guid> AddAsync(CreateRequestRequest createRequestRequest);
     Task DeleteAsync(Guid id);
+    Task<RequestDisplayResponse?> GetByIdAsync(Guid id);
     Task<RequestUpdateResponse> GetRequestForUpdateByIdAsync(Guid id);
-    Task<IEnumerable<RequestDisplayResponse>> GetRequests();
-    Task<IEnumerable<RequestDisplayResponse>> GetRequestsByBloodGroupId(int cityId);
-    Task<IEnumerable<RequestDisplayResponse>> GetRequestsByUserId(Guid userId);
+    Task<IEnumerable<RequestDisplayResponse>> GetRequestsAsync();
+    Task<IEnumerable<RequestDisplayResponse>> GetRequestsByBloodGroupIdAsync(int cityId);
+    Task<IEnumerable<RequestDisplayResponse>> GetRequestsByUserIdAsync(Guid userId);
     Task UpdateAsync(UpdateRequestRequest updateRequestRequest);
 }

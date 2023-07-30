@@ -46,7 +46,7 @@ const Navi = () => {
                     </NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    <NavLink className="nav-link" to="/createHospital" state={""}>
+                    <NavLink className="nav-link" to="/hospitals/createHospital" state={""}>
                     Hastane Oluştur
                     </NavLink>
                   </DropdownItem>

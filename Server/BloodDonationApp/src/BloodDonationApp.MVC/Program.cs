@@ -2,7 +2,6 @@ using BloodDonationApp.Business;
 using BloodDonationApp.DataAccess;
 using BloodDonationApp.DataAccess.Entityframework.Contexts;
 using BloodDonationApp.DataAccess.Entityframework.Seeding;
-using BloodDonationApp.MVC.Caching;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,10 +16,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         option.LoginPath = "/auth/login";
         option.AccessDeniedPath = "/auth/AccessDenied";
     });
-
-builder.Services.AddMemoryCache();
-
-builder.Services.AddScoped<ICache, InMemoryCache>();
 builder.Services.AddDataAccessServices(builder.Configuration);
 builder.Services.AddBusinessServices();
 

@@ -1,5 +1,4 @@
-﻿namespace BloodDonationApp.MVC.Caching;
-
+﻿namespace BloodDonationApp.Business.Caching;
 public interface ICache
 {
     void Set(string key, object value, TimeSpan expiration);

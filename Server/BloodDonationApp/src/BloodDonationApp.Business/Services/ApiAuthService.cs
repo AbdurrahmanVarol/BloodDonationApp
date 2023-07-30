@@ -60,7 +60,11 @@ public class ApiAuthService : AuthServiceBase, IApiAuthService
         var response = new LoginResponse
         {
             Token = token,
-            UserName = $"{user.FirstName} {user.LastName}"
+            UserName = $"{user.FirstName} {user.LastName}",
+            Expire = DateTime.Now.AddDays(5),
+            BloodGroup = user.BloodGroupId,
+            City = user.CityId,
+            UserRole = user.RoleId,
         };
         return response;
     }

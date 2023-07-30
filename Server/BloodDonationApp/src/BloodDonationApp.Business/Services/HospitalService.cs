@@ -3,7 +3,6 @@ using BloodDonationApp.Business.Dtos.Requests;
 using BloodDonationApp.Business.Dtos.Responses;
 using BloodDonationApp.Business.Extensions;
 using BloodDonationApp.DataAccess.Interfaces.Repositories;
-using BloodDonationApp.DataAccess.Interfaces.Transaction;
 using BloodDonationApp.Entities.Entities;
 using BloodDonationApp.Entities.Enums;
 using FluentValidation;
@@ -16,15 +15,13 @@ public class HospitalService : IHospitalService
     private readonly IMapper _mapper;
     private readonly IValidator<Hospital> _validator;
     private readonly IUserService _userService;
-    private readonly IDatabaseTransaction _transaction;
 
-    public HospitalService(IHospitalRepository hospitalRepository, IMapper mapper, IValidator<Hospital> validator, IUserService userService, IDatabaseTransaction transaction)
+    public HospitalService(IHospitalRepository hospitalRepository, IMapper mapper, IValidator<Hospital> validator, IUserService userService)
     {
         _hospitalRepository = hospitalRepository;
         _mapper = mapper;
         _validator = validator;
         _userService = userService;
-        _transaction = transaction;
     }
 
     public async Task<Guid> AddAsync(CreateHospitalRequest request)
@@ -66,6 +63,13 @@ public class HospitalService : IHospitalService
         await _userService.UpdateAsync(employee);
     }
 
+    public async Task<HospitalDisplayResponse?> GetByIdAsync(Guid id)
+    {
+        var hospital = await _hospitalRepository.GetAsync(p => p.Id == id);
+
+        return _mapper.Map<HospitalDisplayResponse?>(hospital);
+    }
+
     public async Task<IEnumerable<HospitalDisplayResponse>> GetHospitalsAsync()
     {
         var hospitals = await _hospitalRepository.GetHospitalsWithIncludes();
@@ -102,7 +106,7 @@ public class HospitalService : IHospitalService
 
     }
 
-    public async Task<bool> HasHospital(Guid id)
+    public async Task<bool> HasHospitalAsync(Guid id)
     {
         return await _hospitalRepository.IsExistAsync(p => p.Id == id);
     }

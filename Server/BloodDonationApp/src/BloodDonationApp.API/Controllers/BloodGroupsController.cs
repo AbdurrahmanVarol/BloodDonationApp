@@ -12,7 +12,7 @@ public class BloodGroupsController : ControllerBase
     {
         _bloodGroupService = bloodGroupService;
     }
-    //TODO: Kan gruplarını serviste cache le 
+
     [HttpGet]
     public async Task<IActionResult> Get()
     {

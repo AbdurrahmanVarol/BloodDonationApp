@@ -15,7 +15,6 @@ public class RequestController : Controller
     private Guid UserId => Guid.Parse(HttpContext.User.Claims.First(p => p.Type.Equals(ClaimTypes.NameIdentifier)).Value);
     private Roles UserRole => Enum.Parse<Roles>(HttpContext.User.Claims.First(p => p.Type.Equals(ClaimTypes.Role)).Value);
 
-
     public RequestController(IRequestService requestService)
     {
         _requestService = requestService;
@@ -25,7 +24,7 @@ public class RequestController : Controller
     public async Task<IActionResult> Index()
     {
         //TODO: hastane bilgileri eklenecek
-        IEnumerable<RequestDisplayResponse> requests = await _requestService.GetRequestsByUserId(UserId);
+        IEnumerable<RequestDisplayResponse> requests = await _requestService.GetRequestsByUserIdAsync(UserId);
         var model = new RequestsViewModel
         {
             Requests = requests,
@@ -41,6 +40,7 @@ public class RequestController : Controller
         ViewBag.UserRole = UserRole;
         return View();
     }
+
     [HttpPost]
     public async Task<IActionResult> CreateRequest(CreateRequestRequest createRequestRequest)
     {
@@ -74,6 +74,7 @@ public class RequestController : Controller
         var request = await _requestService.GetRequestForUpdateByIdAsync(id);
         return View(request);
     }
+
     [HttpPost]
     public async Task<IActionResult> UpdateRequest(UpdateRequestRequest updateRequestRequest)
     {

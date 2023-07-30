@@ -11,6 +11,8 @@ import Hospitals from './pages/Hospitals';
 import CreateHospital from './pages/CreateHospital';
 import CreateRequest from './pages/CreateRequest';
 import Requests from './pages/Requests';
+import UpdateHospital from './pages/UpdateHospital';
+import UpdateRequest from './pages/UpdateRequest';
 
 function App() { 
   return (
@@ -24,15 +26,15 @@ function App() {
             </Route>
             <Route element={<DefaultLayout/>}>
             <Route path='/' element={<Home/>}></Route>
+            
             <Route path='/hospitals' element={<Hospitals/>}></Route>
             <Route path='/hospitals/createHospital' element={<CreateHospital/>}></Route>
-            <Route path='/hospitals/updateHospital/:hospitalId' element={<CreateHospital/>}></Route>
+            <Route path='/hospitals/updateHospital/:id' element={<UpdateHospital/>}></Route>
             <Route path='/hospitals/employeeManagement' element={<CreateHospital/>}></Route>
-            <Route path='/createHospital' element={<CreateHospital/>}></Route>
 
             <Route path='/requests' element={<Requests/>}></Route>
-            <Route path='/createRequest' element={<CreateRequest/>}></Route>
-            <Route path='/' element={<Home/>}></Route>
+            <Route path='/requests/createRequest' element={<CreateRequest/>}></Route>
+            <Route path='/requests/updateRequest/:id' element={<UpdateRequest/>}></Route>            
             </Route>
           </Routes>
         </BrowserRouter>

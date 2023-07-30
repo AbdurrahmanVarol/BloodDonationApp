@@ -20,6 +20,7 @@ public class AuthController : ControllerBase
         var result = await _authService.LoginAsync(loginRequest);
         return Ok(result);
     }
+
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest registerRequest)
     {

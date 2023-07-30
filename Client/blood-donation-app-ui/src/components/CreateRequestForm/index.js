@@ -1,7 +1,6 @@
 import { useFormik } from 'formik'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Button, Form, FormGroup, Input } from 'reactstrap'
-import Cities from '../Cities'
 import alertify from 'alertifyjs'
 import axios from 'axios'
 import DefaultContext from '../../contexts/DefaultContext'

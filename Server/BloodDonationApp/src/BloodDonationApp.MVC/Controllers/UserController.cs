@@ -17,7 +17,7 @@ public class UserController : Controller
 
     public async Task<IActionResult> GetUsersForEmployeeManagement(Guid hospitalId)
     {
-        EmployeeManagementResponse response = await _userService.GetUsersForEmployeeManagement(hospitalId);
+        EmployeeManagementResponse response = await _userService.GetUsersForEmployeeManagementAsync(hospitalId);
         return Json(response);
     }
 }

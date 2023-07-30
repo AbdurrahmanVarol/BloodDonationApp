@@ -12,7 +12,7 @@ public class CitiesController : ControllerBase
     {
         _cityService = cityService;
     }
-    //TODO: şehirleri serviste cachele
+
     [HttpGet]
     public async Task<IActionResult> Get()
     {
