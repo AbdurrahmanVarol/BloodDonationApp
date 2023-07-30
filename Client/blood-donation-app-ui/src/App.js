@@ -7,20 +7,14 @@ import Login from './pages/Login';
 import { useEffect } from 'react';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import Hospitals from './pages/Hospitals';
+import CreateHospital from './pages/CreateHospital';
+import CreateRequest from './pages/CreateRequest';
+import Requests from './pages/Requests';
 
-function App() {
-  const getData = () => {
-    fetch("/a/a/d")
-    .then(response=>response.json())
-    .then(data=>{})
-    .catch(error=>console.log(error))
-}
-useEffect(()=>{
-getData()
-},[])
+function App() { 
   return (
     <div>
-      
       <DefaultContextProvider>
         <BrowserRouter>
           <Routes>
@@ -29,6 +23,15 @@ getData()
             <Route path='/register' element={<Register/>}></Route>
             </Route>
             <Route element={<DefaultLayout/>}>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/hospitals' element={<Hospitals/>}></Route>
+            <Route path='/hospitals/createHospital' element={<CreateHospital/>}></Route>
+            <Route path='/hospitals/updateHospital/:hospitalId' element={<CreateHospital/>}></Route>
+            <Route path='/hospitals/employeeManagement' element={<CreateHospital/>}></Route>
+            <Route path='/createHospital' element={<CreateHospital/>}></Route>
+
+            <Route path='/requests' element={<Requests/>}></Route>
+            <Route path='/createRequest' element={<CreateRequest/>}></Route>
             <Route path='/' element={<Home/>}></Route>
             </Route>
           </Routes>

@@ -15,8 +15,16 @@ public class MvcAuthService : AuthServiceBase, IMvcAuthService
         _mapper = mapper;
     }
 
-    public Task<UserResponse> LoginAsync(LoginRequest loginRequest)
+    public async Task<UserResponse> LoginAsync(LoginRequest loginRequest)
     {
-        throw new NotImplementedException();
+        var user = await _userService.GetByUsernameAsync(loginRequest.UserName) ?? throw new ArgumentException($"Kullanıcı adı ya da şifre hatalı");
+
+        if (!VerifyPasswordHash(loginRequest.Password, user.PasswordHash, user.PasswordSalt))
+        {
+            throw new ArgumentException("Kullanıcı adı ya da şifre hatalı");
+        }
+
+        return _mapper.Map<UserResponse>(user);
+
     }
 }

@@ -27,7 +27,7 @@ const RegisterForm = () => {
             axios({
                 baseURL: 'https://localhost:7195/api',
                 url: '/auth/register',
-                method: 'post',
+                method: 'post',                
                 data: values
             })
                 .then(response => {

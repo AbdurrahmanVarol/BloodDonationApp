@@ -8,6 +8,7 @@ export const DefaultContextProvider = ({ children }) => {
     const [expire, setExpire] = useState(localStorage.getItem("expire"));
     const [bloodGroup, setBloodGroup] = useState(localStorage.getItem("bloodGroup"));
     const [city, setCity] = useState(localStorage.getItem("city"));
+    const [userName, setUserName] = useState(localStorage.getItem("userName"));
     const [userRole, setUserRole] = useState(localStorage.getItem("role"));
 
     useEffect(() => {
@@ -27,20 +28,36 @@ export const DefaultContextProvider = ({ children }) => {
     }, [city])
 
     useEffect(() => {
+        localStorage.setItem("userName", userName)
+    }, [userName])
+
+    useEffect(() => {
         localStorage.setItem("userRole", userRole)
     }, [userRole])
     
+    const clearData = () => {
+        setToken('');
+        setExpire('');
+        setBloodGroup('')
+        setCity('')
+        setUserName('')
+        setUserRole('');
+      }
+
     const values = {
         token,
         expire,
         bloodGroup,
         city,
+        userName,
         userRole,
         setToken,
         setExpire,
         setBloodGroup,
         setCity,
-        setUserRole
+        setUserName,
+        setUserRole,
+        clearData
     }
     return (
         <DefaultContext.Provider value={values}>{children}</DefaultContext.Provider>

@@ -6,7 +6,6 @@ public class CreateHospitalRequest
     [Required(ErrorMessage = "Hastane adı boş geçilemez!")]
     public required string Name { get; set; }
     [Required(ErrorMessage = "Şehir boş geçilemez!")]
-
     public required int CityId { get; set; }
     [Required(ErrorMessage = "Telefon numarası boş geçilemez!")]
     [RegularExpression(pattern: @"\+90\(\d{3}\)\d{3}-\d{2}-\d{2}", ErrorMessage = "Lütfen doğru formatta telefon numarası giriniz")]

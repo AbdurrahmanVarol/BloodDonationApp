@@ -9,8 +9,7 @@ public class CreateRequestRequest
     public required int Quantity { get; set; }
     [Required(ErrorMessage = "Kan grubu boş geçilemez!")]
     public required int BloodGroupId { get; set; }
-    [Required(ErrorMessage = "Hastane boş geçilemez!")]
-    public required Guid? HospitalId { get; set; }
+    public Guid? HospitalId { get; set; }
 
     public Guid UserId { get; set; }
 }

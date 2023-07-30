@@ -23,7 +23,7 @@ const Navi = () => {
     const toggle = () => setIsOpen(!isOpen);
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
           <NavbarBrand className="brand" href="/">
             Kan Bağışı
           </NavbarBrand>

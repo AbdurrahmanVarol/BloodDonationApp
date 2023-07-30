@@ -7,7 +7,7 @@ import axios from 'axios'
 import DefaultContext from '../../contexts/DefaultContext'
 
 const LoginForm = () => {
-    const { setToken, setExpire, setBloodGroup, setCity, setUserRole } = useContext(DefaultContext)
+    const { setToken, setExpire, setBloodGroup, setCity, setUserName,setUserRole } = useContext(DefaultContext)
     const navigate = useNavigate()
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, isSubmitting } = useFormik({
         initialValues: {
@@ -24,11 +24,13 @@ const LoginForm = () => {
                 data: a
             })
                 .then(response => {
+                    console.log(response.data)
                     setToken(response.data.token)
                     setExpire(response.data.expire)
                     setBloodGroup(response.data.bloodGroup)
                     setCity(response.data.city)
-                    setUserRole(response.data.role)
+                    setUserName(response.data.userName)
+                    setUserRole(response.data.userRole)
                     navigate("/")
                 })
                 .catch(errors => {

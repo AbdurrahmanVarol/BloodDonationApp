@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y3HxP1f1jyS4jWOsp7bBncabdDK1MSdYyU09py7cwSzrMi7Wnc7FjKTRIA5mBwsWHiElFgTVou5LfH9/lhorSQ==",
+  "dgSpecHash": "0Ng8uYe0rPglz1NN9zCWCbxdl6CO3/TdJMLskIgPyErUrRF565meVcs9RT49EJARs+DMi9bVeurWlDyKCbjm9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\Yeni klasör\\BloodDonationApp\\Server\\BloodDonationApp\\src\\BloodDonationApp.Entities\\BloodDonationApp.Entities.csproj",
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\BloodDonationApp\\Server\\BloodDonationApp\\src\\BloodDonationApp.Entities\\BloodDonationApp.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

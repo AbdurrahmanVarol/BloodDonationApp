@@ -32,3 +32,20 @@ C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp
 C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\refint\BloodDonationApp.Business.dll
 C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.pdb
 C:\Users\User\source\repos\Yeni klasör\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\ref\BloodDonationApp.Business.dll
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.Business.deps.json
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.Business.dll
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.Business.pdb
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.DataAccess.dll
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.Entities.dll
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.DataAccess.pdb
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\bin\Debug\net7.0\BloodDonationApp.Entities.pdb
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.AssemblyInfo.cs
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.csproj.CopyComplete
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.dll
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\refint\BloodDonationApp.Business.dll
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\BloodDonationApp.Business.pdb
+C:\Users\User\source\repos\BloodDonationApp\Server\BloodDonationApp\src\BloodDonationApp.Business\obj\Debug\net7.0\ref\BloodDonationApp.Business.dll
