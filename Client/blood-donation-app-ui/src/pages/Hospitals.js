@@ -10,6 +10,10 @@ const Hospitals = () => {
     const [hospitals, setHospitals] = useState([])
 
     useEffect(() => {
+        loadData()
+    }, [])
+
+    const loadData = () => {
         axios({
             method: "Get",
             headers: {
@@ -19,23 +23,20 @@ const Hospitals = () => {
             url: '/hospitals'
         })
             .then(response => setHospitals(response.data))
-        console.log(hospitals)
-    }, [])
+    }
 
-    const deleteHospital = event => {
-        let id = event.target.getAttribute('data-id')
+    const deleteHospital = hospitalId => {
+       
         axios({
             method: "Delete",
             baseURL: 'https://localhost:7195/api',
-            url: `/hospitals/${id}`,
+            url: `/hospitals/${hospitalId}`,
             headers: {
                 "Authorization": `Bearer ${token}`
             },
         }).then(() => {
-            let child = event.target.parentNode.parentNode
-            let parent = event.target.parentNode.parentNode.parentNode
-            parent.removeChild(child);
             alertify.success('Talep silindi')
+            loadData()
         })
             .catch(() => {
                 alertify.error('Talep silime işleminde bir hata oluştu')
@@ -52,7 +53,7 @@ const Hospitals = () => {
                             <span className="btn-group">
                                 <NavLink to={`/hospitals/employeeManagement/${hospital.id}`} className="btn btn-outline-dark">Personel Ekle/Çıkar</NavLink>
                                 <NavLink to={`/hospitals/updateHospital/${hospital.id}`} className="btn btn-outline-dark">Düzenle</NavLink>
-                                <button color='light' className="btn btn-outline-dark" data-id={hospital.id} onClick={deleteHospital}>Sil</button>
+                                <button color='light' className="btn btn-outline-dark" onClick={() => deleteHospital(hospital.id)}>Sil</button>
                             </span>
                         </li>
                     ))

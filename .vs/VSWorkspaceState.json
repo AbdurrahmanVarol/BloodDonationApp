@@ -1,18 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Client",
-    "\\Client\\blood-donation-app-ui",
-    "\\Client\\blood-donation-app-ui\\src",
-    "\\Client\\blood-donation-app-ui\\src\\components",
     "\\Server",
     "\\Server\\BloodDonationApp",
     "\\Server\\BloodDonationApp\\src",
+    "\\Server\\BloodDonationApp\\src\\BloodDonationApp.API",
+    "\\Server\\BloodDonationApp\\src\\BloodDonationApp.API\\Controllers",
     "\\Server\\BloodDonationApp\\src\\BloodDonationApp.MVC",
     "\\Server\\BloodDonationApp\\src\\BloodDonationApp.MVC\\Views",
     "\\Server\\BloodDonationApp\\src\\BloodDonationApp.MVC\\Views\\Shared",
     "\\Server\\BloodDonationApp\\src\\BloodDonationApp.MVC\\Views\\Shared\\Components",
     "\\Server\\BloodDonationApp\\src\\BloodDonationApp.MVC\\Views\\Shared\\Components\\Navbar"
   ],
+  "SelectedNode": "\\Server\\BloodDonationApp\\src\\BloodDonationApp.API\\Controllers\\UsersController.cs",
   "PreviewInSolutionExplorer": false
 }

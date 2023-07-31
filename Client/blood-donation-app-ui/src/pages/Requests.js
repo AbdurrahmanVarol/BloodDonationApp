@@ -9,6 +9,10 @@ const Requests = () => {
     const [requests, setRequests] = useState([])
 
     useEffect(() => {
+        loadData()
+    }, [])
+
+    const loadData = () => {
         axios({
             method: "Get",
             baseURL: 'https://localhost:7195/api',
@@ -18,23 +22,19 @@ const Requests = () => {
             }
         })
             .then(response => setRequests(response.data))
+    }
 
-    }, [])
-
-    const deleteRequest = event => {
-        let id = event.target.getAttribute('data-id')
+    const deleteRequest = requestId => {
         axios({
             method: "Delete",
             baseURL: 'https://localhost:7195/api',
-            url: `/requests/${id}`,
+            url: `/requests/${requestId}`,
             headers: {
                 "Authorization": `Bearer ${token}`
             },
         }).then(() => {
-            let child = event.target.parentNode.parentNode
-            let parent = event.target.parentNode.parentNode.parentNode
-            parent.removeChild(child);
             alertify.success('Talep silindi')
+            loadData()
         })
             .catch(() => {
                 alertify.error('Talep silime işleminde bir hata oluştu')
@@ -53,7 +53,7 @@ const Requests = () => {
                             </div>
                             <div className="btn-group">
                                 <NavLink to={`/requests/updateRequest/${request.id}`} className="btn btn-outline-dark">Düzenle</NavLink>
-                                <button type="button" className="btn btn-outline-dark" data-id={request.id} onClick={deleteRequest}>Sil</button>
+                                <button type="button" className="btn btn-outline-dark" onClick={() => deleteRequest(request.id)}>Sil</button>
                             </div>
                         </li>
                     ))
