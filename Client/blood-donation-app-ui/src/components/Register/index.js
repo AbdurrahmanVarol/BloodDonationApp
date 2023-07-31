@@ -27,11 +27,11 @@ const RegisterForm = () => {
             axios({
                 baseURL: 'https://localhost:7195/api',
                 url: '/auth/register',
-                method: 'post',                
+                method: 'post',
                 data: values
             })
                 .then(response => {
-                   alertify.success('Kayıt olundu')
+                    alertify.success('Kayıt olundu')
                 })
                 .catch(errors => {
                     console.log(errors)
@@ -133,11 +133,11 @@ const RegisterForm = () => {
                 </Button>
             </Form>
             <div class="links">
-                <strong class="text-dark-emphasis">Hesabınız var mı?</strong> 
+                <strong class="text-dark-emphasis">Hesabınız var mı?</strong>
                 <NavLink
                     to="/login"
                 >
-                 <strong>Giriş yap</strong>
+                    <strong>Giriş yap</strong>
                 </NavLink>
             </div>
         </div>

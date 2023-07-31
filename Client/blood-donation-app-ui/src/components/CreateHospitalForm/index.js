@@ -5,12 +5,14 @@ import Cities from '../Cities'
 import alertify from 'alertifyjs'
 import axios from 'axios'
 import DefaultContext from '../../contexts/DefaultContext'
+import validationSchema from "./validations"
+import InputMask from "react-input-mask";
 
 const CreateHospitalForm = () => {
-    const {token} = useContext(DefaultContext)
-    useEffect(()=>{
+    const { token } = useContext(DefaultContext)
+    useEffect(() => {
         console.log(token)
-    },[])
+    }, [])
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, isSubmitting } = useFormik({
         initialValues: {
             name: "",
@@ -18,14 +20,14 @@ const CreateHospitalForm = () => {
             cityId: "",
             address: ""
         },
-        onSubmit: (values, bag) => {       
-            console.log(values)     
+        onSubmit: (values, bag) => {
+            console.log(values)
             axios({
                 baseURL: 'https://localhost:7195/api',
                 url: '/hospitals',
                 method: 'Post',
-                headers:{
-                    "Authorization":`Bearer ${token}`
+                headers: {
+                    "Authorization": `Bearer ${token}`
                 },
                 data: values
             })
@@ -37,14 +39,15 @@ const CreateHospitalForm = () => {
                     alertify.error('Hastane eklerken bir hata oluştu.')
                 })
         },
-        //validationSchema
+        validationSchema
     })
     return (
         <div>
             <Form onSubmit={handleSubmit}>
-            <FormGroup>
+                <FormGroup>
                     <label className="text-dark-emphasis" htmlFor="name">Hastane Adı:</label>
                     <Input
+                       
                         id="name"
                         name="name"
                         placeholder="Hastane adını giriniz..."
@@ -56,14 +59,16 @@ const CreateHospitalForm = () => {
                 </FormGroup>
                 <FormGroup>
                     <label className="text-dark-emphasis" htmlFor="phoneNumber">Telefon Numarası:</label>
-                    <Input
+                    <InputMask
                         id="phoneNumber"
                         name="phoneNumber"
-                        placeholder="Telefon numarasını giriniz..."
+                        className='form-control'
+                        mask="+\90(999)999-99-99"
+                        placeholder="+90(123)456-78-90"
                         value={values.phoneNumber}
                         onBlur={handleBlur("phoneNumber")}
                         onChange={handleChange}
-                    ></Input>
+                    />
                     {errors.phoneNumber && touched.phoneNumber && <div className="text-danger">{errors.phoneNumber}</div>}
                 </FormGroup>
                 <FormGroup>

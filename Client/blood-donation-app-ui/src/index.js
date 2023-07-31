@@ -7,5 +7,6 @@ import "alertifyjs/build/css/alertify.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+   
+        <App />
 );

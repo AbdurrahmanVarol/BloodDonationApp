@@ -4,7 +4,7 @@ import CreateHospitalForm from '../components/CreateHospitalForm'
 const CreateHospital = () => {
   return (
     <div>
-      <CreateHospitalForm/>
+      <CreateHospitalForm />
     </div>
   )
 }

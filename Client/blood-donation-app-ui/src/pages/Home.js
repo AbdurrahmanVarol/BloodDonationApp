@@ -4,20 +4,20 @@ import DefaultContext from '../contexts/DefaultContext'
 import axios from 'axios'
 
 const Home = () => {
-  const { token,userName, bloodGroup } = useContext(DefaultContext)
+  const { token, userName, bloodGroup } = useContext(DefaultContext)
   const [requests, setRequests] = useState([])
 
   useEffect(() => {
- 
+
     axios({
-      method:"Get",
-      baseURL:'https://localhost:7195/api',
-      url:`requests/bloodgroup/${bloodGroup}`,
-      headers:{
-          "Authorization":`Bearer ${token}`
+      method: "Get",
+      baseURL: 'https://localhost:7195/api',
+      url: `requests/bloodgroup/${bloodGroup}`,
+      headers: {
+        "Authorization": `Bearer ${token}`
       }
-  })
-    
+    })
+
       .then(response => {
         setRequests(response.data)
       })
@@ -40,7 +40,7 @@ const Home = () => {
         </thead>
         <tbody>
           {
-            requests.length > 0 && requests.map((request,index) => (
+            requests.length > 0 && requests.map((request, index) => (
               <tr key={index}>
                 <td>{request.bloodGroup}</td>
                 <td>{request.quantity}</td>

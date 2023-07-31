@@ -9,7 +9,7 @@ export const DefaultContextProvider = ({ children }) => {
     const [bloodGroup, setBloodGroup] = useState(localStorage.getItem("bloodGroup"));
     const [city, setCity] = useState(localStorage.getItem("city"));
     const [userName, setUserName] = useState(localStorage.getItem("userName"));
-    const [userRole, setUserRole] = useState(localStorage.getItem("role"));
+    const [userRole, setUserRole] = useState(localStorage.getItem("userRole"));
 
     useEffect(() => {
         localStorage.setItem("token", token)
@@ -34,7 +34,7 @@ export const DefaultContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("userRole", userRole)
     }, [userRole])
-    
+
     const clearData = () => {
         setToken('');
         setExpire('');
@@ -42,7 +42,7 @@ export const DefaultContextProvider = ({ children }) => {
         setCity('')
         setUserName('')
         setUserRole('');
-      }
+    }
 
     const values = {
         token,

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import UpdateHospitalForm from '../components/UpdateHospitalForm';
 
 const UpdateHospital = () => {
-    const { id } = useParams();   
+    const { id } = useParams();
     return (
         <div>
             <UpdateHospitalForm id={id} />

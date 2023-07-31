@@ -53,4 +53,21 @@ public class HospitalsController : ControllerBase
         await _hospitalService.DeleteAsync(id);
         return NoContent();
     }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost("[action]")]
+    public async Task<IActionResult> AddEmployee([FromBody] AddEmployeeRequest addEmployeeRequest)
+    {
+        await _hospitalService.AddEmployeeAsync(addEmployeeRequest);
+        return Ok(new { IsSuccess = true });
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost("[action]")]
+    public async Task<IActionResult> RemoveEmployee([FromBody] RemoveEmployeeRequest removeEmployeeRequest)
+    {
+        await _hospitalService.RemoveEmployeeAsync(removeEmployeeRequest);
+        return Ok(new { IsSuccess = true });
+
+    }
 }

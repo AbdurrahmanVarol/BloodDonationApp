@@ -6,8 +6,10 @@ import axios from 'axios'
 import DefaultContext from '../../contexts/DefaultContext'
 import HospitalsAsSelect from '../HospitalsAsSelect'
 import BloodGroups from '../BloodGroups'
+import validationSchema from "./validations"
+
 const CreateRequestForm = () => {
-    const { token,userRole } = useContext(DefaultContext)
+    const { token, userRole } = useContext(DefaultContext)
 
     const { handleSubmit, handleChange, handleBlur, setFieldValue, values, errors, touched, isSubmitting } = useFormik({
         initialValues: {
@@ -28,13 +30,12 @@ const CreateRequestForm = () => {
             })
                 .then(response => {
                     alertify.success('Talep oluşturuldu.')
-                    bag.resetForm()
                 })
                 .catch(errors => {
                     alertify.error('Talep oluşturulurken bir hata oluştu.')
                 })
         },
-        //validationSchema
+        validationSchema
     })
 
     const increase = () => {
@@ -61,22 +62,27 @@ const CreateRequestForm = () => {
                         <HospitalsAsSelect handleChange={handleChange} value={values.hospitalId} />
                     </FormGroup>)
                 }
+
                 <FormGroup>
                     <BloodGroups handleChange={handleChange} value={values.bloodGroupId} />
-                </FormGroup>                
-                <FormGroup className="input-group input-group-lg">                   
-                    <Input
-                        id="quantity"
-                        name="quantity"
-                        placeholder="Miktar giriniz..."
-                        value={values.quantity}
-                        onBlur={handleBlur("quantity")}
-                        onChange={handleChange}
-                    ></Input>
-                    <div className="btn-group">
-                        <Button color='outline-danger' type="button" onClick={()=>decrease()} >-5</Button>
-                        <Button color='outline-success' type="button" onClick={()=>increase()} >+5</Button>
+                </FormGroup>
+                <FormGroup >
+                    <div className="input-group input-group-lg">
+                        <Input
+                            id="quantity"
+                            name="quantity"
+                            type='number'
+                            placeholder="Miktar giriniz..."
+                            value={values.quantity}
+                            onBlur={handleBlur("quantity")}
+                            onChange={handleChange}
+                        ></Input>
+                        <div className="btn-group">
+                            <Button color='outline-danger' type="button" onClick={() => decrease()} >-5</Button>
+                            <Button color='outline-success' type="button" onClick={() => increase()} >+5</Button>
+                        </div>
                     </div>
+
                     {errors.quantity && touched.quantity && <div className="text-danger">{errors.quantity}</div>}
                 </FormGroup>
                 <Button type="submit" color="success" >

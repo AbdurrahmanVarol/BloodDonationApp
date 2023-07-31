@@ -4,7 +4,7 @@ import CreateRequestForm from '../components/CreateRequestForm'
 const CreateRequest = () => {
   return (
     <div>
-      <CreateRequestForm/>
+      <CreateRequestForm />
     </div>
   )
 }

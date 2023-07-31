@@ -5,6 +5,9 @@ import alertify from 'alertifyjs'
 import axios from 'axios'
 import DefaultContext from '../../contexts/DefaultContext'
 import Cities from '../Cities'
+import validationSchema from "./validations"
+import InputMask from "react-input-mask";
+
 const UpdateHospitalForm = ({ id }) => {
 
     const { token } = useContext(DefaultContext)
@@ -26,7 +29,7 @@ const UpdateHospitalForm = ({ id }) => {
                 "Authorization": `Bearer ${token}`
             }
         })
-            .then(({data}) => {
+            .then(({ data }) => {
                 setHospital({ ...data })
             })
             .catch(errors => {
@@ -49,13 +52,13 @@ const UpdateHospitalForm = ({ id }) => {
                 data: values
             })
                 .then(response => {
-                    alertify.success('Hastane güncellendi.')                    
+                    alertify.success('Hastane güncellendi.')
                 })
                 .catch(errors => {
                     alertify.error('Hastane güncellerken bir hata oluştu.')
                 })
         },
-        //validationSchema
+        validationSchema
     })
     return (
         <div>
@@ -74,14 +77,16 @@ const UpdateHospitalForm = ({ id }) => {
                 </FormGroup>
                 <FormGroup>
                     <label className="text-dark-emphasis" htmlFor="phoneNumber">Telefon Numarası:</label>
-                    <Input
+                    <InputMask
                         id="phoneNumber"
                         name="phoneNumber"
-                        placeholder="Telefon numarasını giriniz..."
+                        className='form-control'
+                        mask="+\90(999)999-99-99"
+                        placeholder="+90(123)456-78-90"
                         value={values.phoneNumber}
                         onBlur={handleBlur("phoneNumber")}
                         onChange={handleChange}
-                    ></Input>
+                    />
                     {errors.phoneNumber && touched.phoneNumber && <div className="text-danger">{errors.phoneNumber}</div>}
                 </FormGroup>
                 <FormGroup>

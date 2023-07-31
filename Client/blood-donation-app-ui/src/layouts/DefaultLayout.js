@@ -5,7 +5,7 @@ import Navi from '../components/Navi'
 import Footer from '../components/Footer'
 
 const DefaultLayout = () => {
-  const { token, expire,clearData } = useContext(DefaultContext)
+  const { token, expire, clearData } = useContext(DefaultContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -23,12 +23,12 @@ const DefaultLayout = () => {
       navigate("/login");
       return
     }
-  }, [token,expire]);
+  }, [token, expire]);
   return (
     <div className="default">
       <Navi></Navi>
       <div className="defaultContent">
-        <div className="defaultComponent pb-3 shadow bg-light">
+        <div className="defaultComponent pb-3 bg-light">
           <Outlet></Outlet>
         </div>
       </div>

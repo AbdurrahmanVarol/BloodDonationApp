@@ -6,6 +6,7 @@ import axios from 'axios'
 import DefaultContext from '../../contexts/DefaultContext'
 import HospitalsAsSelect from '../HospitalsAsSelect'
 import BloodGroups from '../BloodGroups'
+import validationSchema from "./validations"
 
 const UpdateRequestForm = ({ id }) => {
     const { token, userRole } = useContext(DefaultContext)
@@ -59,7 +60,7 @@ const UpdateRequestForm = ({ id }) => {
                     alertify.error('Talep güncellerken bir hata oluştu')
                 })
         },
-        //validationSchema
+        validationSchema
     })
 
     const increase = () => {

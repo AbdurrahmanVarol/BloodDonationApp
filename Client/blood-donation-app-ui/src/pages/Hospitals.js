@@ -6,17 +6,17 @@ import DefaultContext from '../contexts/DefaultContext'
 import alertify from 'alertifyjs'
 
 const Hospitals = () => {
-    const {token} = useContext(DefaultContext)
+    const { token } = useContext(DefaultContext)
     const [hospitals, setHospitals] = useState([])
 
     useEffect(() => {
         axios({
-            method:"Get",
-            headers:{
+            method: "Get",
+            headers: {
                 Authorization: `Bearer ${token}`
             },
-            baseURL:'https://localhost:7195/api',
-            url:'/hospitals'
+            baseURL: 'https://localhost:7195/api',
+            url: '/hospitals'
         })
             .then(response => setHospitals(response.data))
         console.log(hospitals)
@@ -25,28 +25,28 @@ const Hospitals = () => {
     const deleteHospital = event => {
         let id = event.target.getAttribute('data-id')
         axios({
-            method:"Delete",
-            baseURL:'https://localhost:7195/api',
-            url:`/hospitals/${id}`,
-            headers:{
-                "Authorization":`Bearer ${token}`
+            method: "Delete",
+            baseURL: 'https://localhost:7195/api',
+            url: `/hospitals/${id}`,
+            headers: {
+                "Authorization": `Bearer ${token}`
             },
-        }).then(()=>{
+        }).then(() => {
             let child = event.target.parentNode.parentNode
             let parent = event.target.parentNode.parentNode.parentNode
             parent.removeChild(child);
             alertify.success('Talep silindi')
         })
-        .catch(()=>{
-            alertify.error('Talep silime işleminde bir hata oluştu')
-        })
+            .catch(() => {
+                alertify.error('Talep silime işleminde bir hata oluştu')
+            })
     }
 
     return (
         <div>
             <ol className="list-group list-group-numbered">
                 {
-                    hospitals.length > 0 && hospitals.map((hospital,index) => (
+                    hospitals.length > 0 && hospitals.map((hospital, index) => (
                         <li key={index} className="list-group-item d-flex justify-content-between">
                             <span>{hospital.name}</span>
                             <span className="btn-group">
@@ -58,8 +58,6 @@ const Hospitals = () => {
                     ))
                 }
             </ol>
-
-
         </div>
     )
 }
