@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\Client",
-    "\\Client\\blood-donation-app-ui",
     "\\Server",
     "\\Server\\BloodDonationApp",
     "\\Server\\BloodDonationApp\\src",
-    "\\Server\\BloodDonationApp\\src\\BloodDonationApp.Business.Tests"
+    "\\Server\\BloodDonationApp\\src\\BloodDonationApp.API",
+    "\\Server\\BloodDonationApp\\src\\BloodDonationApp.Business",
+    "\\Server\\BloodDonationApp\\src\\BloodDonationApp.Business\\Services"
   ],
-  "SelectedNode": "\\Server\\BloodDonationApp\\src\\BloodDonationApp.Business.Tests\\HospitalTests.cs",
+  "SelectedNode": "\\Server\\BloodDonationApp\\src\\BloodDonationApp.Business\\Services\\RequestService.cs",
   "PreviewInSolutionExplorer": false
 }
