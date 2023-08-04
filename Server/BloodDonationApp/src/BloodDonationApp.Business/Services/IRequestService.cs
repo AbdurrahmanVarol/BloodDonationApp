@@ -9,7 +9,7 @@ public interface IRequestService
     Task<RequestDisplayResponse?> GetByIdAsync(Guid id);
     Task<RequestUpdateResponse> GetRequestForUpdateByIdAsync(Guid id);
     Task<IEnumerable<RequestDisplayResponse>> GetRequestsAsync();
-    Task<IEnumerable<RequestDisplayResponse>> GetRequestsByBloodGroupIdAsync(int cityId);
+    Task<IEnumerable<RequestDisplayResponse>> GetRequestsByBloodGroupIdAsync(int bloodGroupId);
     Task<IEnumerable<RequestDisplayResponse>> GetRequestsByUserIdAsync(Guid userId);
     Task UpdateAsync(UpdateRequestRequest updateRequestRequest);
 }

@@ -26,20 +26,18 @@ public class HospitalService : IHospitalService
 
     public async Task<Guid> AddAsync(CreateHospitalRequest request)
     {
-        try
+        if (request is null)
         {
-            var hospital = _mapper.Map<Hospital>(request);
-
-            _validator.ValidateAndThrowValidationException(hospital);
-
-            await _hospitalRepository.AddAsync(hospital);
-
-            return hospital.Id;
+            throw new ArgumentNullException(nameof(request));
         }
-        catch
-        {
-            throw;
-        }
+
+        var hospital = _mapper.Map<Hospital>(request);
+
+        _validator.ValidateAndThrowValidationException(hospital);
+
+        await _hospitalRepository.AddAsync(hospital);
+
+        return hospital.Id;
     }
 
     public async Task AddEmployeeAsync(AddEmployeeRequest request)
@@ -86,6 +84,11 @@ public class HospitalService : IHospitalService
 
     public async Task UpdateAsync(UpdateHospitalRequest updateHospitalRequest)
     {
+        if (updateHospitalRequest is null)
+        {
+            throw new ArgumentNullException(nameof(updateHospitalRequest));
+        }
+
         var hospital = await _hospitalRepository.GetAsync(p => p.Id == updateHospitalRequest.Id) ?? throw new ArgumentException($"{updateHospitalRequest.Id} Id'li hastane bulunamadı.");
 
         hospital.CityId = updateHospitalRequest.CityId;

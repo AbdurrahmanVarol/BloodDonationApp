@@ -227,14 +227,14 @@ public class EfDbSeeding
                   CityId = 58,
                   Name = "Mersin Şehir Hastanesi",
                   Address = "Korukent Mah. 96015 Sok. Mersin Entegre Sağlık Kampüsü, 33240 Toroslar/Mersin",
-                  PhoneNumber = "0324 225 10 00"
+                  PhoneNumber = "+90(324)225-10-00"
               },
               new Hospital
               {
                   CityId = 58,
                   Name = "Mersin Toros Devlet Hastanesi",
                   Address = "Mesudiye, 5117. Sk. No:34, 33060 Akdeniz/Mersin",
-                  PhoneNumber = "0324 233 71 80"
+                  PhoneNumber = "+90(324)233-71-80"
               },
            };
             context.Hospitals.AddRange(hospitals);

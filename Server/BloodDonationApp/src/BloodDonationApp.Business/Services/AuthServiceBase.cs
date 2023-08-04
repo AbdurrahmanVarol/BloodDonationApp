@@ -34,6 +34,14 @@ public class AuthServiceBase : IAuthService
 
     public async Task RegisterAsync(RegisterRequest registerRequest)
     {
+        if (registerRequest is null)
+        {
+            throw new ArgumentNullException(nameof(registerRequest));
+        }
+        if (!registerRequest.Password.Equals(registerRequest.PasswordConfirm))
+        {
+            throw new ArgumentException("Şifre ve şifre tekrar aynı değil.");
+        }
         CreatePasswordHash(registerRequest.Password, out string passwordHash, out string passwordSalt);
 
         var user = _mapper.Map<User>(registerRequest);

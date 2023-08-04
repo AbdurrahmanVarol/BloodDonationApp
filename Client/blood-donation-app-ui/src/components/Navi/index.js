@@ -18,7 +18,7 @@ import DefaultContext from "../../contexts/DefaultContext";
 const Navi = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { clearData } = useContext(DefaultContext);
+  const { token, userRole, clearData } = useContext(DefaultContext);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -35,33 +35,42 @@ const Navi = () => {
                 Anasayfa
               </NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Hastane İşlemleri
-              </DropdownToggle>
-              <DropdownMenu end>
-                <DropdownItem>
-                  <NavLink className="nav-link" to="/hospitals" state={""}>
-                    Hastaneler
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" to="/hospitals/createHospital" state={""}>
-                    Hastane Oluştur
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" to="/requests" state={""}>
-                    Talepler
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink className="nav-link" to="/requests/createRequest" state={""}>
-                    Talep Oluştur
-                  </NavLink>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+            {
+              
+              token && userRole != 3 ? (
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
+                    Hastane İşlemleri
+                  </DropdownToggle>
+                  <DropdownMenu end>
+                  {
+                    userRole == 1 ? (
+                      <><DropdownItem>
+                          <NavLink className="nav-link" to="/hospitals" state={""}>
+                            Hastaneler
+                          </NavLink>
+                        </DropdownItem><DropdownItem>
+                            <NavLink className="nav-link" to="/hospitals/createHospital" state={""}>
+                              Hastane Oluştur
+                            </NavLink>
+                          </DropdownItem></>
+                    ):<></>
+                  }
+                    <DropdownItem>
+                      <NavLink className="nav-link" to="/requests" state={""}>
+                        Talepler
+                      </NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavLink className="nav-link" to="/requests/createRequest" state={""}>
+                        Talep Oluştur
+                      </NavLink>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              ) : <></>
+            }
+
           </Nav>
           <Button
             color="danger"

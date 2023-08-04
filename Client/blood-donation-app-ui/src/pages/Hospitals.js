@@ -34,7 +34,7 @@ const Hospitals = () => {
             headers: {
                 "Authorization": `Bearer ${token}`
             },
-        }).then(() => {
+        }).then(() => {            
             alertify.success('Talep silindi')
             loadData()
         })

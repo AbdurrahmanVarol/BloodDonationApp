@@ -2,6 +2,7 @@ using BloodDonationApp.Business;
 using BloodDonationApp.DataAccess;
 using BloodDonationApp.DataAccess.Entityframework.Contexts;
 using BloodDonationApp.DataAccess.Entityframework.Seeding;
+using BloodDonationApp.MVC.Middlewares;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseMiddleware<NotFoundMiddleware>();
 
 app.UseRouting();
 

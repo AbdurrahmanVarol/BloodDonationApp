@@ -98,26 +98,26 @@ const EmployeeManagement = () => {
     return (
         <div>
             <h3>Personel Ekle</h3>
-            <div class="input-group input-group-lg mb-3">
+            <div className="input-group input-group-lg mb-3">
                 <Input type='select' id="users" onChange={changeSelectedUser}>
-                    <option value="0" selected hidden>Seçiniz</option>
+                    <option value="0" defaultValue hidden>Seçiniz</option>
                     {
                          users && users.length > 0 && users.map((user, index) => (
                             <option key={index} value={user.id} >{user.fullName}</option>
                          ))
                     }
                 </Input>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-success" onClick={()=>addEmployee()}>Personel Ekle</button>
+                <div className="btn-group">
+                    <button type="button" className="btn btn-outline-success" onClick={()=>addEmployee()}>Personel Ekle</button>
                 </div>
             </div>
 
             <ul id="employeeList">
                 {
                     employees && employees.length > 0 && employees.map((employee, index) => (
-                        <li key={index} class="list-group-item fs-5 d-flex justify-content-between align-items-center">
-                            <button class="close btn badge text-danger float-end me-2" onClick={()=>removeEmployee(employee.id)}>X</button>
-                            <div class="me-auto">
+                        <li key={index} className="list-group-item fs-5 d-flex justify-content-between align-items-center">
+                            <button className="close btn badge text-danger float-end me-2" onClick={()=>removeEmployee(employee.id)}>X</button>
+                            <div className ="me-auto">
                                 {employee.fullName}
                             </div>
                         </li>

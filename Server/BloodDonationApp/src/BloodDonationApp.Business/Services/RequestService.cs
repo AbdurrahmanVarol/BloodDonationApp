@@ -25,10 +25,14 @@ public class RequestService : IRequestService
 
     public async Task<Guid> AddAsync(CreateRequestRequest createRequestRequest)
     {
+        if (createRequestRequest is null)
+        {
+            throw new ArgumentNullException(nameof(createRequestRequest));
+        }
 
         Guid hospitalId = default;
 
-
+        //request dto sunun içerisinde hospital id null yada boş geliyorsa hasyane personeli istek atmıştir ve hastaneId si kullanıcı bilgisinden alınacaktır        
         if (createRequestRequest.HospitalId == null || createRequestRequest.HospitalId == default)
         {
             var user = await _userService.GetByIdAsync(createRequestRequest.UserId) ?? throw new ArgumentException($"{createRequestRequest.UserId} Id'li kullanıcı bulunamadı");
@@ -41,6 +45,7 @@ public class RequestService : IRequestService
 
         var addedRequest = await _requestRepository.GetAsync(p => p.BloodGroupId == createRequestRequest.BloodGroupId && p.HospitalId == hospitalId);
 
+        //hastanede request dto sunun inerisinde kan grubuna ait bir kayıt varsa o kaydu güncelle
         if (addedRequest is not null)
         {
             var updateRequest = new UpdateRequestRequest
@@ -106,7 +111,6 @@ public class RequestService : IRequestService
 
     public async Task<IEnumerable<RequestDisplayResponse>> GetRequestsByUserIdAsync(Guid userId)
     {
-        //TODO: Talepler kangrubuna göre listelensin
         //TODO:Refactor
         var user = await _userService.GetByIdAsync(userId) ?? throw new ArgumentException($"{userId} Id'li kullanıcı bulunamadı");
 

@@ -15,6 +15,7 @@ public class RegisterRequest
     public required int CityId { get; set; }
     public required int GenderId { get; set; }
     public required int BloodGroupId { get; set; }
+    public Guid? HospitalId { get; set; }
 
     [Required(ErrorMessage = "Kullanıcı adı boş geçilemez!")]
     public required string UserName { get; set; }

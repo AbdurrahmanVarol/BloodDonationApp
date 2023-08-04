@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entityframework\Mapping\" />
+    <Compile Remove="Entityframework\Mapping\**" />
+    <EmbeddedResource Remove="Entityframework\Mapping\**" />
+    <None Remove="Entityframework\Mapping\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Entityframework\Seeding\" />
   </ItemGroup>
 

@@ -1,5 +1,6 @@
 ﻿using BloodDonationApp.Business.Services;
 using BloodDonationApp.MVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Security.Claims;
@@ -16,7 +17,7 @@ public class HomeController : Controller
         _logger = logger;
         _requestService = requestService;
     }
-
+    [Authorize]
     public async Task<IActionResult> Index()
     {
         var isAuthenticated = HttpContext.User.Identity?.IsAuthenticated ?? false;

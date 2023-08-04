@@ -1,16 +1,14 @@
 ﻿
 @{
-    Layout = null;
+    ViewData["Title"] = "AccessDenied";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>AccessDenied</title>
-</head>
-<body>
-    <h1>AccessDenied</h1>
-</body>
-</html>
+<div class="d-flex justify-content-center align-items-center" style="height:90vh;">
+    <div class="text-center">
+        <h1 class="text-danger fw-bold">Oooops</h1>
+        <h5>401 - Yetkisiz Giriş</h5>
+        <a class="btn btn-outline-secondary" asp-action="index" asp-controller="home"> Anasayfaya git</a>
+    </div>
+</div>

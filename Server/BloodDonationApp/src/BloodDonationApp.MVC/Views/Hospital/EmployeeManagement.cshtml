@@ -27,10 +27,10 @@
             console.log(employee)
             return `
                     <li class="list-group-item fs-5 d-flex justify-content-between align-items-center">
+                            <button class="close btn badge text-danger float-end" onclick="removeEmployee('${employee.id}')">&#x2715</button>
                         <div class="me-auto">
                                     ${employee.fullName}
-                        </div>
-                        <button class="close btn badge text-danger float-end" onclick="removeEmployee('${employee.id}')">&#x2715</button>
+                        </div>                        
                     </li>
             `
         }

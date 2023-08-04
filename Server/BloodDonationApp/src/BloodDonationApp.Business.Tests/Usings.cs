@@ -1,1 +1,14 @@
+global using AutoMapper;
+global using BloodDonationApp.Business.Dtos.Requests;
+global using BloodDonationApp.Business.Mapping.AutoMapper;
+global using BloodDonationApp.Business.Services;
+global using BloodDonationApp.Business.Validators.FluentValidation;
+global using BloodDonationApp.DataAccess.Entityframework.Contexts;
+global using BloodDonationApp.DataAccess.Entityframework.Repositories;
+global using BloodDonationApp.DataAccess.Entityframework.Seeding;
+global using BloodDonationApp.DataAccess.Interfaces.Repositories;
+global using BloodDonationApp.Entities.Entities;
+global using BloodDonationApp.Entities.Enums;
+global using FluentValidation;
+global using Microsoft.EntityFrameworkCore;
 global using NUnit.Framework;

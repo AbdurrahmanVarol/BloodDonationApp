@@ -49,6 +49,10 @@ public class ApiAuthService : AuthServiceBase, IApiAuthService
 
     public async Task<LoginResponse> LoginAsync(LoginRequest loginRequest)
     {
+        if (loginRequest is null)
+        {
+            throw new ArgumentNullException(nameof(loginRequest));
+        }
         var user = await _userService.GetByUsernameAsync(loginRequest.UserName) ?? throw new ArgumentException($"Kullanıcı adı ya da şifre hatalı");
 
         if (!VerifyPasswordHash(loginRequest.Password, user.PasswordHash, user.PasswordSalt))

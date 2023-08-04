@@ -26,7 +26,6 @@ function App() {
             </Route>
             <Route element={<DefaultLayout />}>
               <Route path='/' element={<Home />}></Route>
-
               <Route path='/hospitals' element={<Hospitals />}></Route>
               <Route path='/hospitals/createHospital' element={<CreateHospital />}></Route>
               <Route path='/hospitals/updateHospital/:id' element={<UpdateHospital />}></Route>
@@ -39,7 +38,6 @@ function App() {
           </Routes>
         </BrowserRouter>
         </DefaultContextProvider>
-
     </div>
   );
 }
