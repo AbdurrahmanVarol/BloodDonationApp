@@ -1,0 +1,12 @@
+﻿ @model IEnumerable<HospitalDisplayResponse>
+
+<div class="mb-3 form-floating">
+    <select class="form-select" id="HospitalId" name="HospitalId">
+        <option value="0" selected hidden>Seçiniz</option>
+        @foreach (var hospital in Model)
+        {
+            <option value="@hospital.Id">@($"{hospital.Name} - {hospital.City}")</option>
+        }
+    </select>
+    <label for="HospitalId">Hastane</label>
+</div>

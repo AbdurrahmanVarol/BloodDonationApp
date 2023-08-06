@@ -1,0 +1,50 @@
+﻿@using BloodDonationApp.Entities.Enums;
+@model NavbarViewModel
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Kan Bağış Uygulaması</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                </li>
+                @if (Model.IsAuthenticated && Model.UserRole != Roles.Donor)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hastane İşlemleri
+                        </a>
+                        <ul class="dropdown-menu">
+                            @if (Model.UserRole == Roles.Admin)
+                            {
+                                <li><a class="dropdown-item" asp-action="index" asp-controller="hospital">Hastaneler</a></li>
+                                <li><a class="dropdown-item" asp-action="CreateHospital" asp-controller="Hospital">Hastane Oluştur</a></li>
+                            }
+
+                            <li><a class="dropdown-item" asp-action="index" asp-controller="request">Talepler</a></li>
+                            <li><a class="dropdown-item" asp-action="createrequest" asp-controller="request">Talep Oluştur</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                }
+            </ul>
+            @if (!Model.IsAuthenticated)
+            {
+                <a class="btn btn-primary" asp-action="login" asp-controller="auth">Giriş Yap</a>
+            }
+            else
+            {
+                <a class="btn btn-danger" asp-action="logout" asp-controller="auth">@($"{Model.UserName}(Çıkış)")</a>
+            }
+        </div>
+    </div>
+</nav>
+
+
+

@@ -1,0 +1,48 @@
+﻿@model RequestUpdateResponse 
+@{
+    ViewData["Title"] = "UpdateRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="updateRequest" asp-controller="request" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="HospitalId" />
+    @await Component.InvokeAsync("BloodGroup",new{selectedId = Model.BloodGroupId})
+    <div class="mb-3">
+        <div class="input-group input-group-lg">
+            <input class="form-control" asp-for="Quantity" placeholder="Miktarı giriniz...">
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger" onclick="decrease()">-5</button>
+                <button type="button" class="btn btn-outline-success" onclick="increate()">+5</button>
+            </div>
+        </div>
+        <span asp-validation-for="Quantity" class="text-danger p-1"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
+
+@section Scripts{
+    <script>
+        const increate = () => {
+            let element = document.getElementById('Quantity')
+            let quantity = element.value
+            if (!quantity) {
+                quantity = 0
+            }
+            quantity = +quantity + 5
+
+            element.value = quantity
+        }
+        const decrease = () => {
+            let element = document.getElementById('Quantity')
+            let quantity = element.value
+            if (!quantity || quantity == 0) {
+                element.value = 0
+                return
+            }
+            quantity = +quantity - 5
+            element.value = quantity
+        }
+    </script>
+}

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<GenderResponse>
+
+<div class="mb-3 form-floating">
+    <select class="form-select" id="GenderId" name="GenderId">
+        <option value="0" selected hidden>Seçiniz</option>
+        @foreach (var gender in Model)
+        {
+            <option value="@gender.Id" >@($"{gender.Name}")</option>
+        }
+    </select>
+    <label for="GenderId">Cinsiyet</label>
+</div>

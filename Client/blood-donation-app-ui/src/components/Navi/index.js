@@ -18,7 +18,7 @@ import DefaultContext from "../../contexts/DefaultContext";
 const Navi = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { token, userRole, clearData } = useContext(DefaultContext);
+  const { token, userName, userRole, clearData } = useContext(DefaultContext);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -79,7 +79,9 @@ const Navi = () => {
               navigate("/login");
             }}
           >
-            Çıkış Yap
+            {
+              userName ? `${userName.split(" ")[0]}(Çıkış)` : 'Çıkış Yap'
+            }
           </Button>
         </Collapse>
       </Navbar>

@@ -5,17 +5,19 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1A85C188-9E0C-40FA-96C4-02D57D4231D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.API", "src\BloodDonationApp.API\BloodDonationApp.API.csproj", "{98D5EBAC-A283-4E95-8E75-8842492CB900}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.Entities", "src\BloodDonationApp.Entities\BloodDonationApp.Entities.csproj", "{F2B659C1-374A-47AE-A594-A1298F8D0DEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.DataAccess", "src\BloodDonationApp.DataAccess\BloodDonationApp.DataAccess.csproj", "{22AD6F4A-DE2F-456E-A5E4-19CB78F47068}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.Business", "src\BloodDonationApp.Business\BloodDonationApp.Business.csproj", "{BC914279-ABE2-4F9E-AFAA-C88C508F6C46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.MVC", "src\BloodDonationApp.MVC\BloodDonationApp.MVC.csproj", "{E0CC568C-AF6A-4E01-8A43-8D8724ED726E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.Business.Tests", "src\BloodDonationApp.Business.Tests\BloodDonationApp.Business.Tests.csproj", "{BE55BE91-8AF5-4A37-AE46-B945ED60637B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A3373086-99F8-480B-BC6B-08809F7BEE9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.API", "src\Presentation\BloodDonationApp.API\BloodDonationApp.API.csproj", "{F006FFD9-638F-428B-82C6-F65530EEAD36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonationApp.MVC", "src\Presentation\BloodDonationApp.MVC\BloodDonationApp.MVC.csproj", "{11CABA79-3D3F-4C96-A62B-DBD023BA6566}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98D5EBAC-A283-4E95-8E75-8842492CB900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98D5EBAC-A283-4E95-8E75-8842492CB900}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98D5EBAC-A283-4E95-8E75-8842492CB900}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98D5EBAC-A283-4E95-8E75-8842492CB900}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2B659C1-374A-47AE-A594-A1298F8D0DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2B659C1-374A-47AE-A594-A1298F8D0DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2B659C1-374A-47AE-A594-A1298F8D0DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,25 +37,30 @@ Global
 		{BC914279-ABE2-4F9E-AFAA-C88C508F6C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC914279-ABE2-4F9E-AFAA-C88C508F6C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC914279-ABE2-4F9E-AFAA-C88C508F6C46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0CC568C-AF6A-4E01-8A43-8D8724ED726E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0CC568C-AF6A-4E01-8A43-8D8724ED726E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0CC568C-AF6A-4E01-8A43-8D8724ED726E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0CC568C-AF6A-4E01-8A43-8D8724ED726E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE55BE91-8AF5-4A37-AE46-B945ED60637B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE55BE91-8AF5-4A37-AE46-B945ED60637B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE55BE91-8AF5-4A37-AE46-B945ED60637B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE55BE91-8AF5-4A37-AE46-B945ED60637B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F006FFD9-638F-428B-82C6-F65530EEAD36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F006FFD9-638F-428B-82C6-F65530EEAD36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F006FFD9-638F-428B-82C6-F65530EEAD36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F006FFD9-638F-428B-82C6-F65530EEAD36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CABA79-3D3F-4C96-A62B-DBD023BA6566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CABA79-3D3F-4C96-A62B-DBD023BA6566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CABA79-3D3F-4C96-A62B-DBD023BA6566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CABA79-3D3F-4C96-A62B-DBD023BA6566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{98D5EBAC-A283-4E95-8E75-8842492CB900} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
 		{F2B659C1-374A-47AE-A594-A1298F8D0DEC} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
 		{22AD6F4A-DE2F-456E-A5E4-19CB78F47068} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
 		{BC914279-ABE2-4F9E-AFAA-C88C508F6C46} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
-		{E0CC568C-AF6A-4E01-8A43-8D8724ED726E} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
 		{BE55BE91-8AF5-4A37-AE46-B945ED60637B} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
+		{A3373086-99F8-480B-BC6B-08809F7BEE9A} = {1A85C188-9E0C-40FA-96C4-02D57D4231D5}
+		{F006FFD9-638F-428B-82C6-F65530EEAD36} = {A3373086-99F8-480B-BC6B-08809F7BEE9A}
+		{11CABA79-3D3F-4C96-A62B-DBD023BA6566} = {A3373086-99F8-480B-BC6B-08809F7BEE9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {375E3259-0185-40BE-AB52-B83CE7D7014D}

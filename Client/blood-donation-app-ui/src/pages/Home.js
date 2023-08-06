@@ -28,8 +28,8 @@ const Home = () => {
       <div className="text-center mb-3">
         <h1 className="display-4">Hoşgeldin {userName}</h1>
       </div>
-
-      <Table borderless dark striped>
+      <h1>Talepler</h1>
+      <Table bordered striped>
         <thead>
           <tr>
             <td>Tür</td>

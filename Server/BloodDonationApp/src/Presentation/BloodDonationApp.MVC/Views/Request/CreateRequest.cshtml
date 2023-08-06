@@ -1,0 +1,59 @@
+﻿@model CreateRequestRequest
+@{
+    ViewData["Title"] = "CreateRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var a = ViewBag.UserRole;
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info text-center" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
+<form asp-action="createRequest" asp-controller="request" method="post">
+    @if (ViewBag.UserRole == Roles.Admin)
+    {
+        @await Component.InvokeAsync("Hospitals")        
+    }
+    @await Component.InvokeAsync("BloodGroup")
+    <div class="mb-3">
+    <div class="input-group input-group-lg">
+        <input class="form-control" asp-for="Quantity" placeholder="Miktarı giriniz...">
+        <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger" onclick="decrease()">-5</button>
+                <button type="button" class="btn btn-outline-success" onclick="increase()">+5</button>
+        </div>
+    </div>
+        <span asp-validation-for="Quantity" class="text-danger p-1"></span>
+    </div>
+
+ <button type="submit" class="btn btn-success" >Kaydet</button>
+</form>
+
+@section Scripts{
+    <script>
+        const increase = () =>{
+            let element = document.getElementById('Quantity')
+            let quantity = element.value
+            if(!quantity){
+                quantity = 0
+            }
+            quantity = +quantity + 5
+
+            element.value = quantity
+        }
+        const decrease = () => {
+            let element = document.getElementById('Quantity')
+            let quantity = element.value
+            if (!quantity || quantity == 0) {
+                element.value = 0
+                return
+            }
+            quantity = +quantity - 5
+            element.value = quantity
+        }
+    </script>
+}
+
