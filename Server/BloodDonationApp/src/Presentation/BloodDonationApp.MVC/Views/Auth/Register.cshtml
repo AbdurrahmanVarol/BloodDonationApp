@@ -15,16 +15,19 @@
     <div class="form-group">
         <label class="text-dark-emphasis" asp-for="FirstName">Ad:</label>
         <input class="form-control" asp-for="FirstName" placeholder="Adınızı girin" />
+        <span class="text-danger p-1" asp-validation-for="FirstName"></span>
     </div>
     <br />
     <div class="form-group">
         <label class="text-dark-emphasis" asp-for="LastName">Soyad:</label>
         <input class="form-control" asp-for="LastName" placeholder="Soyadınızı girin" />
+        <span class="text-danger p-1" asp-validation-for="LastName"></span>
     </div>
     <br />
     <div class="form-group">
         <label class="text-dark-emphasis" asp-for="Email">E-posta:</label>
         <input type="email" class="form-control" asp-for="Email" placeholder="E-postanızı girin" />
+        <span class="text-danger p-1" asp-validation-for="Email"></span>
     </div>
     <br />
     @await Component.InvokeAsync("BloodGroup")
@@ -35,16 +38,19 @@
     <div class="form-group">
         <label class="text-dark-emphasis" asp-for="UserName">Kullanıcı Adı:</label>
         <input class="form-control" asp-for="UserName" placeholder="Kullanıcı adınızı girin" />
+        <span class="text-danger p-1" asp-validation-for="UserName"></span>
     </div>
     <br />
     <div class="form-group">
         <label class="text-dark-emphasis" asp-for="Password">Şifre</label>
         <input class="form-control" asp-for="Password" type="password" placeholder="Şifrenizi girin" />
+        <span class="text-danger p-1" asp-validation-for="Password"></span>
     </div>
     <br />
     <div class="form-group">
         <label class="text-dark-emphasis" asp-for="PasswordConfirm">Şifre Tekrarı</label>
-        <input class="form-control" asp-for="PasswordConfirm" type="password" placeholder="Şifrenizi tekrar girin" />
+        <input class="form-control" asp-for="PasswordConfirm" placeholder="Şifrenizi tekrar girin" />
+        <span class="text-danger p-1" asp-validation-for="PasswordConfirm"></span>
     </div>
     <br />
     <div class="text-right">
