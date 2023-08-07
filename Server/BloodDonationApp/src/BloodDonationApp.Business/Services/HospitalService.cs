@@ -104,7 +104,8 @@ public class HospitalService : IHospitalService
     public async Task DeleteAsync(Guid id)
     {
         var hospital = await _hospitalRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentException($"{id} Id'li hastane bulunamadı.");
-
+        //TODO: Hastaneye ait bir personel var ise silme işleminde hata fırlatıyor.
+        //TODO: Hasatane kullanıcı ilişkisine .OnDelete(DeleteBehavior.SetNull) ekle
         await _hospitalRepository.DeleteAsync(hospital);
 
     }
