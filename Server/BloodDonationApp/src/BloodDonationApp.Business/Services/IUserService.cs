@@ -12,4 +12,5 @@ public interface IUserService
     Task<IEnumerable<EmployeeResponse>> GetByHospitalIdAsync(Guid hospitalId);
     Task<IEnumerable<EmployeeResponse>> GetUnEmployedUsersAsync();
     Task<EmployeeManagementResponse> GetUsersForEmployeeManagementAsync(Guid hospitalId);
+    Task<IEnumerable<User>> GetUsersByHospitalIdAsync(Guid hospitalId);
 }

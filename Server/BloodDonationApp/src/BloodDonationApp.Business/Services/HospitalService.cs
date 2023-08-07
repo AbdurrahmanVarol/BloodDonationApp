@@ -3,6 +3,7 @@ using BloodDonationApp.Business.Dtos.Requests;
 using BloodDonationApp.Business.Dtos.Responses;
 using BloodDonationApp.Business.Extensions;
 using BloodDonationApp.DataAccess.Interfaces.Repositories;
+using BloodDonationApp.DataAccess.Interfaces.Transaction;
 using BloodDonationApp.Entities.Entities;
 using BloodDonationApp.Entities.Enums;
 using FluentValidation;
@@ -15,13 +16,15 @@ public class HospitalService : IHospitalService
     private readonly IMapper _mapper;
     private readonly IValidator<Hospital> _validator;
     private readonly IUserService _userService;
+    private readonly IDatabaseTransaction _transaction;
 
-    public HospitalService(IHospitalRepository hospitalRepository, IMapper mapper, IValidator<Hospital> validator, IUserService userService)
+    public HospitalService(IHospitalRepository hospitalRepository, IMapper mapper, IValidator<Hospital> validator, IUserService userService, IDatabaseTransaction transaction)
     {
         _hospitalRepository = hospitalRepository;
         _mapper = mapper;
         _validator = validator;
         _userService = userService;
+        _transaction = transaction;
     }
 
     public async Task<Guid> AddAsync(CreateHospitalRequest request)
@@ -106,7 +109,26 @@ public class HospitalService : IHospitalService
         var hospital = await _hospitalRepository.GetAsync(p => p.Id == id) ?? throw new ArgumentException($"{id} Id'li hastane bulunamadı.");
         //TODO: Hastaneye ait bir personel var ise silme işleminde hata fırlatıyor.
         //TODO: Hasatane kullanıcı ilişkisine .OnDelete(DeleteBehavior.SetNull) ekle
-        await _hospitalRepository.DeleteAsync(hospital);
+        using var trasaction = await _transaction.BeginTransactionAsync();
+
+        var employees = await _userService.GetUsersByHospitalIdAsync(id);
+        try
+        {
+
+            foreach (var employee in employees)
+            {
+                employee.RoleId = (int)Roles.Donor;
+                employee.HospitalId = null;
+                await _userService.UpdateAsync(employee);
+            }
+            await _hospitalRepository.DeleteAsync(hospital);
+            await trasaction.CommitAsync();
+        }
+        catch
+        {
+            await trasaction.RollbackAsync();
+            throw;
+        }
 
     }
 

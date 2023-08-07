@@ -36,6 +36,11 @@ public class UserService : IUserService
         return _mapper.Map<IEnumerable<EmployeeResponse>>(users);
     }
 
+    public async Task<IEnumerable<User>> GetUsersByHospitalIdAsync(Guid hospitalId)
+    {
+        return await _userRepository.GetAllAsync(p => p.HospitalId == hospitalId);
+    }
+
     public async Task<User?> GetByIdAsync(Guid id)
     {
         return await _userRepository.GetAsync(p => p.Id == id);
